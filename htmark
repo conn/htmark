@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require_relative './lib/validate.rb'
+require_relative './lib/template.rb'
+
+module HTMark
+  class << self
+    def generated(url)
+      puts Template.filled Validate.acceptable url
+    end
+  end
+end
+
+::HTMark.generated ARGV[0]
